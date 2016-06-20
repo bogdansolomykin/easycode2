@@ -12,7 +12,7 @@ $resultMinus = $numberInt - 5;
 $kharkiv = 1500000
 $odessa = 1000000;
 $kiev = 2000000;
-
+ 
 $result = ($kharkiv + $odessa + $kiev) / 3 ;
 echo $result;
 
@@ -22,4 +22,13 @@ $result = pow($a, 4);
 echo $result;
 
 // 3. 
-$listOfCity = array();
+$listOfCity = array(
+    'kharkiv' => 100,
+    'kiev' => 200,
+    'odessa' => 4000
+);
+
+$result = ($listOfCity['kharkiv'] + $listOfCity['kiev'] + $listOfCity['odessa']) / count($listOfCity);
+$result = array_sum($listOfCity) / count($listOfCity);
+echo $result;
+

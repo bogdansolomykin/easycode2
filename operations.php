@@ -13,5 +13,7 @@ $kharkiv = 1500000
 $odessa = 1000000;
 $kiev = 2000000;
 
-$result = 0;
+$result = ($kharkiv + $odessa + $kiev) / 3 ;
 echo $result;
+
+// 2. $a = 2;

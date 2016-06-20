@@ -20,3 +20,6 @@ echo $result;
 $a = 10;
 $result = pow($a, 4);
 echo $result;
+
+// 3. 
+$listOfCity = array();

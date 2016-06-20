@@ -17,3 +17,6 @@ $result = ($kharkiv + $odessa + $kiev) / 3 ;
 echo $result;
 
 // 2. $a = 2;
+$a = 10;
+$result = pow($a, 4);
+echo $result;

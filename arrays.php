@@ -65,3 +65,9 @@ $countries = array(
 	)
 );
 echo $countries[1]['cities'][0]['name'];
+
+$city = array(
+	'name' => 'Kharkiv',
+	'population' => 100500
+);
+

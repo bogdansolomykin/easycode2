@@ -30,3 +30,21 @@ $array[] = 2;
 
 echo "\n";
 print_r($array);
+
+// 1. хранить информацию о преподавателе(имя)
+// 2. хранить информацию о студентах(имя)
+// использовать 1 массив
+$school = array(
+    'teacher' => array(
+        'name' => 'BOgdan',
+        'lastname' => 'sol'
+    ),
+    'students' => array(
+        array(
+            'name' => 'Sergey'
+        ),
+        array(
+            'name' => 'Sasha'
+        )
+    )
+);

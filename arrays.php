@@ -71,3 +71,12 @@ $city = array(
 	'population' => 100500
 );
 
+$array = array(
+	'key' => array()
+);
+
+$array['key'][] = array('name' => 'some name');
+$array['key'][] = array('name' => 'some name2');
+print_r($array);
+
+

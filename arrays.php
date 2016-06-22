@@ -53,3 +53,15 @@ $school = array(
 // 3. У стран есть города
 // 3.1 У каждого города есть название и население
 // можно использовать 1 переменную
+$countries = array(
+	1 => array(
+		'name' => 'Ukraine',
+		'cities' => array(
+			array(
+                'name' => 'Kiev' 
+			),
+			array()	
+		)  
+	)
+);
+echo $countries[1]['cities'][0]['name'];

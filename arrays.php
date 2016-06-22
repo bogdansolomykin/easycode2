@@ -23,3 +23,10 @@ $house = array(
 		)
 	)
 );
+
+$array = array(100 => 1, 'aomw atring');
+$array[3] = 3;
+$array[] = 2;
+
+echo "\n";
+print_r($array);

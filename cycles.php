@@ -80,6 +80,22 @@ $carCenter = array(
                     )
                 )
             )
+        ),
+        'toyota' => array(
+            'models' => array(
+                'camry' => array(
+                    'years' => array(
+                        1999,
+                        2000
+                    )
+                ),
+                'corolla' => array(
+                    'years' => array(
+                        2003,
+                        2004
+                    )
+                )
+            )
         )
     )
 );

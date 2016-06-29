@@ -39,29 +39,29 @@ ini_set('display_errors', 1);
 //    echo ', value: ' . $element . '<br />';
 //}
 
-$carCenter = [
-    'bmw' => array(
-        'm5' => array(
-            1999,
-            2001
-        ),
-        'm6' => array(
-            2001,
-            2002
-        )
-    ),
-    'toyota' => array(
-        'camry' => array(1999)
-    )
-];
-foreach ($carCenter as $brandName => $models) {
-    echo 'Brand: ' . $brandName . "\r\n";
-    echo 'Models: ';
-    foreach ($models as $modelName => $modelYears) {
-        echo $modelName . ',';
-    }
-    echo "\r\n";
-}
+//$carCenter = [
+//    'bmw' => array(
+//        'm5' => array(
+//            1999,
+//            2001
+//        ),
+//        'm6' => array(
+//            2001,
+//            2002
+//        )
+//    ),
+//    'toyota' => array(
+//        'camry' => array(1999)
+//    )
+//];
+//foreach ($carCenter as $brandName => $models) {
+//    echo 'Brand: ' . $brandName . "\r\n";
+//    echo 'Models: ';
+//    foreach ($models as $modelName => $modelYears) {
+//        echo $modelName . ',';
+//    }
+//    echo "\r\n";
+//}
 
 $carCenter = array(
     'brands' => array(
@@ -84,7 +84,9 @@ $carCenter = array(
     )
 );
 // вывести все бренды (bmw)
-
+foreach ($carCenter['brands'] as $brandName => $models) {
+    echo $brandName . ',';
+}
 
 // while do
 

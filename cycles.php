@@ -101,7 +101,9 @@ $carCenter = array(
 );
 // вывести все бренды (bmw)
 foreach ($carCenter['brands'] as $brandName => $models) {
-    echo $brandName . ',';
+    foreach ($models['models'] as $modelName => $years) {
+        echo $modelName . ',';
+    }
 }
 
 // while do

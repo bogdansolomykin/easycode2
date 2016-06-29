@@ -17,11 +17,19 @@ ini_set('display_errors', 1);
 //echo '<br />';
 
 // for
-$array = array(1, 2, 3, 4, 5, 6, 7, 8, 9);
+$array = array('word', 2, 3, 'four', 5, 6, 7, 8, 9);
 $arrayCount = count($array); // получить кол-во элементов в массиве
-for ($i = 7; $i < $arrayCount; $i++) { // 10
+for ($i = 0; $i < $arrayCount; $i++) { // 10
     echo $array[$i];
     echo "<br />";
+}
+
+//1. создать массив, в котором есть перечень автомобильных брендов
+//2. вывести все бренды(начиная с конца) через запятую на экран
+$carBrands = array('BMW', 'Audi', 'Mercedes', 'Volvo', 'Lexus', 'Tesla', 'Porsche');
+$arrayCount = count($carBrands);
+for($i = $arrayCount - 1; $i >= 0; $i--) {
+    echo $carBrands[$i] . ', ';
 }
 
 // foreach

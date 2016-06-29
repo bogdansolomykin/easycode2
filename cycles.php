@@ -33,11 +33,57 @@ ini_set('display_errors', 1);
 //}
 
 // foreach
-$array = ['a' => 'bmw', 'b' =>  'toyota', 'c' => 'mercedes'];
-foreach ($array as $key => $element) {
-    echo 'key: ' . $key;
-    echo ', value: ' . $element . '<br />';
+//$array = ['a' => 'bmw', 'b' =>  'toyota', 'c' => 'mercedes'];
+//foreach ($array as $key => $element) {
+//    echo 'key: ' . $key;
+//    echo ', value: ' . $element . '<br />';
+//}
+
+$carCenter = [
+    'bmw' => array(
+        'm5' => array(
+            1999,
+            2001
+        ),
+        'm6' => array(
+            2001,
+            2002
+        )
+    ),
+    'toyota' => array(
+        'camry' => array(1999)
+    )
+];
+foreach ($carCenter as $brandName => $models) {
+    echo 'Brand: ' . $brandName . "\r\n";
+    echo 'Models: ';
+    foreach ($models as $modelName => $modelYears) {
+        echo $modelName . ',';
+    }
+    echo "\r\n";
 }
+
+$carCenter = array(
+    'brands' => array(
+        'bmw' => array(
+            'models' => array(
+                'm5' => array(
+                    'years' => array(
+                        1999,
+                        2000
+                    )
+                ),
+                'm6' => array(
+                    'years' => array(
+                        2001,
+                        2002
+                    )
+                )
+            )
+        )
+    )
+);
+// вывести все бренды (bmw)
 
 
 // while do

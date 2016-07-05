@@ -9,3 +9,5 @@ if ($i < 2) { // false
 } else {
     echo $i . ' is too big';
 }
+
+?>

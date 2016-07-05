@@ -8,12 +8,20 @@ while ($i <= 100) {
     $i++;
 }
 
+$i = 0;
 $sum = 0;
-foreach ($array as $value) {
-    $sum = $sum + $value; 
+
+while ($i <= 99) {
+    $sum += $array[$i];
+    $i++;
 }
 
+echo 'while solution: ';
 echo $sum;
+
+echo "<br />";
+echo 'array_sum solution: ';
+echo array_sum($array);
 
 
 

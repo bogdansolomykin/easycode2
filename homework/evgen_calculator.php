@@ -34,9 +34,6 @@ if ($first && $second) {
         echo $first / $second;
     }
 } else {
-    if (count($_POST) === 0) {
-        echo 'Привет!';
-    } else {
-        echo 'Задайте оба числа!';
-    }
+
+    echo 'Задайте оба числа!';
 }

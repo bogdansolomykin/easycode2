@@ -18,5 +18,7 @@ foreach (getData() as $key => $data):
         <h1><?= $data['header'] ?></h1>
         <img width="300px" height="300px" src="https://habrastorage.org/files/bbb/6d0/ce5/bbb6d0ce5b2e409aa9f8fe986d87eeec.png" alt="">
         <p><?= $data['text'] ?></p>
+        (<?= isset($data['date_creation']) ? $data['date_creation'] : 'Дата отсутствует' ?>)
+        Осталось до удаления: <?= $data['time_left'] ?>
     </div>
 <?php endforeach; ?>

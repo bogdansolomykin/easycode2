@@ -5,15 +5,11 @@ error_reporting(E_ALL);
 require 'cookie.php';
 ?>
 <?php
-if (isset($_GET['header']) && $_GET['header'] != '') {
-    saveData($_GET['header'], $_GET['text']);
-}
 if (isset($_GET['noteName'])) {
     hideNoteImage($_GET['noteName']);
 }
-$imgName = '1';
 ?>
-    <form action="">
+    <form action="save.php">
         Заголовок: <input type="text" name="header"> <br />
         Текст: <textarea name="text"></textarea><br />
         <input type="submit">

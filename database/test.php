@@ -4,7 +4,12 @@ $connectionObject = mysqli_connect("localhost", "root", "123", "bogdan"); // с�
 $resource = mysqli_query($connectionObject, "SELECT * FROM author"); // выполянем запрос к базе, указывая при этом какое соединение использовать
 
 $rows = array();
-while ($row = mysqli_fetch_assoc($resource)) {
+while (true) {
+    $row = mysqli_fetch_assoc($resource);
+    if ($row === null) {
+        break;
+    }
+
     $rows[] = $row;
 }
 

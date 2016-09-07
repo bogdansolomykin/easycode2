@@ -31,3 +31,40 @@ function fetchAll($sql) {
 
     return $rows;
 }
+
+function insert($tableName, $params) {
+    $keyArray = array();
+    $valueArray = array();
+    foreach ($params as $key => $value) {
+        $keyArray[] = "`" . $key . "`";
+        $valueArray[] = "'" . $value . "'";
+    }
+
+    $columns = implode(",", $keyArray);
+    $values = implode(",", $valueArray);
+
+    $sql = "INSERT INTO `{$tableName}` ({$columns}) VALUES ($values)";
+
+    $connectionObject = getDbConnection();
+    mysqli_query($connectionObject, $sql);
+}
+
+//function insert($tableName, $params) {
+//    $columns = implode(
+//        ', ',
+//        array_map(function($element) {
+//            return '`' . $element . '`';
+//        }, array_keys($params))
+//    );
+//
+//    $values = implode(
+//        ', ',
+//        array_map(function($element) {
+//            return "'" . $element . "'";
+//        }, array_values($params))
+//    );
+//
+//    $sql = "INSERT INTO `{$tableName}` ({$columns}) VALUES ($values)";
+//    $connectionObject = getDbConnection();
+//    mysqli_query($connectionObject, $sql);
+//}

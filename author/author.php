@@ -3,53 +3,47 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once 'db.php';
+require_once 'query.php';
 
 $connectionObject = getDbConnection();
 
 if(isset($_GET['id'])) {
-
-    $authorName = $_GET['id'];
+    $authorID = $_GET['id'];
+    $authorName = $_GET['name'];
     echo 'Author: ' . $authorName;
 
-    $resource = mysqli_query($connectionObject,
-        "SELECT
-        `a`.`id`, `a`.`name`, `a`.`age`, `b`.`title`
-        FROM `author` AS `a`
-        LEFT JOIN `author_book` AS `ab` ON `a`.`id` = `ab`.`author_id`
-        LEFT JOIN `book` AS `b` ON `b`.`id` = `ab`.`book_id`
-        WHERE `a`.`name` = '{$authorName}';"
-    );
-
-    $rows = array();
-    while (true) {
-        $row = mysqli_fetch_assoc($resource);
-        if ($row === null) {
-            break;
-        }
-
-        $rows[] = $row;
-    }
+    $rows = getAuthorsBooks($authorID);
     // echo '<pre>';
     // print_r($rows);
     // echo '</pre>';
-    ?>
 
-    <table>
-        <tr>
-            <td>Books:</td>
-        </tr>
+    if (!$rows) {
+        echo '<br/>У этого автора пока нет книг.<br />';
+    } else {
 
-        <?php foreach($rows as $index => $author): ?>
+        ?>
+
+        <table>
             <tr>
-                <td><?= $author['title']; ?></td>
+                <td>Books:</td>
             </tr>
-        <?php endforeach; ?>
 
-    </table>
+            <?php foreach($rows as $index => $authorsData): ?>
+                <tr>
+                    <td><?= $authorsData['title']; ?></td>
+                </tr>
+            <?php endforeach; ?>
 
-    <a href="index.php">На главную</a>
+        </table>
 
-    <?php
+        <?php
+
+    }
+
+} else {
+    echo 'Вернитесь к выбору автора.<br />';
 }
+
 ?>
+
+<a href="index.php">На главную</a>

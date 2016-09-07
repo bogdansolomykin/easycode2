@@ -30,10 +30,8 @@ function getAuthorsBooks($authorID) {
     return fetchAll($sql);
 }
 
-function deleteFromDb($idToDelete) {
-    $sql = "DELETE FROM `author` WHERE `id` = $idToDelete;";
-    $connectionObject = getDbConnection();
-    mysqli_query($connectionObject, $sql);
+function deleteAuthorById($id) {
+    delete('author', 'id = ' . $id);
 }
 
 function addNewAuthor($name, $age) {

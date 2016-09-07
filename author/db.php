@@ -49,6 +49,12 @@ function insert($tableName, $params) {
     mysqli_query($connectionObject, $sql);
 }
 
+function delete($tableName, $condition) {
+    $sql = "DELETE FROM {$tableName} WHERE {$condition}";
+    $connectionObject = getDbConnection();
+    mysqli_query($connectionObject, $sql);
+}
+
 //function insert($tableName, $params) {
 //    $columns = implode(
 //        ', ',

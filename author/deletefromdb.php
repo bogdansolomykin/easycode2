@@ -9,5 +9,5 @@ require_once 'query.php';
 
 if(isset($_GET['idToDelete'])) {
     $idToDelete = $_GET['idToDelete'];
-    deleteFromDb($idToDelete);
+    deleteAuthorById($idToDelete);
 }

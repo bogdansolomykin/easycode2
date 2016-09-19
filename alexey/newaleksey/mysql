@@ -1,0 +1,69 @@
+ssh root@185.69.153.231 // Богдана
+wSAUZlYj37JU
+
+ssh root@185.25.116.101
+WFNTb57ZPWBG
+
+//Установка mysql
+sudo apt-get install mysql-server php-mysql
+sudo apt-get install phpmyadmin apache2-utils
+sudo nano /etc/apache2/apache2.conf
+Include /etc/phpmyadmin/apache.conf
+sudo service apache2 restart
+
+
+sudo apt-get update && apt-get upgrade
+
+sudo reboot
+sudo dpkg --configure -a
+
+mysql -u root -p123 // u-user  p-password //connect mysql
+show databases; //Показывает текущие базы данных
+CREATE DATABASE bases_name; //Создание базы
+USE bases_name; // Перейти в базу
+
+//пример создания таблицы
+CREATE TABLE table_name (
+	id INTEGER(11) AUTO_INCREMENT PRIMARY KEY,
+	title varchar(255) NOT NULL,
+	img varchar(200) DEFAULT '',
+	note_text text NOT NULL
+) ENGINE=InnoDb CHARSET=utf8;
+
+SHOW CREATE TABLE table_name // показать как создавалась таблица
+SHOW TABLES // показать таблицы в базе
+DESC table_name // показать таблицу
+
+INSERT INTO note (title, note_text) VALUES ('first tile', 'some text1'), ('second title', 'second text'); // наполнение таблицы
+
+SELECT * FROM table_name // показать таблицу полностью 
+SELECT title FROM table_name // показать столбец title
+SELECT * FROM table_name WHERE id=3 // показать данные с айдишником 3
+SELECT * FROM table_name WHERE title = 'some title' OR id = 3 // Получить все данные с заголовком сом тайл и данный с айдишником 3
+SELECT * FROM table_name WHERE id<>3 // все записи где ади не равен 3
+SELECT * FROM `city` ORDER BY cities_name ASC; -- по возрастанию
+SELECT * FROM `city` ORDER BY cities_name DESC; -- по убыванию
+SELECT * FROM `city` ORDER BY region, cities_name; по 2 столбцам
+SELECT * FROM `city` ORDER BY region ASC, cities_name DESC
+SELECT * FROM `city` ORDER BY cities_name DESC LIMIT 5;
+SELECT * FROM `city` LIMIT 4, 2
+SELECT MAX(population) FROM `city` -- максимальное число
+SELECT MIN(population) FROM `city` -- миниальное число
+SELECT AVG(population) FROM `city` -- среднее число
+SELECT sum(population) FROM `city` -- сумма чисел
+SELECT count(*) FROM `city` WHERE 1
+SELECT * FROM nomenclature, description WHERE nomenclature.id = description.id; -- Объеденение таблиц
+FROM nomenclature INNER JOIN description using(id); -- Объеденение таблиц
+
+UPDATE table_name SET title = 'first title' WHERE id = 1 // Заменит заголовок на ферст тайтл у записи с айдишником 1
+
+DELETE FROM table_name WHERE id = 1
+ALTER TABLE table_name ADD COLUMN region varchar(10) NOT NULL AFTER id// добавить колонку
+ALTER TABLE `note` MODIFY `title` varchar(200) NOT NULL; // изменить характеристики колонки
+
+ALTER TABLE Persons ADD PRIMARY KEY (P_Id) -- Добавить ограничение к колонке
+ALTER TABLE Persons DROP CONSTRAINT pk_PersonID
+
+ALTER TABLE `note` CHANGE `title` `title2` varchar(200) NOT NULL; // переименовать колонку
+
+UPDATE note SET region = 'zapad' WHERE id in (3, 2, 4);

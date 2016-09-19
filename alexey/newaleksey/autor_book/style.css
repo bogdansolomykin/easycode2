@@ -1,0 +1,15 @@
+td{
+	border: #000 1px solid;
+    text-align: center;
+}
+.tabl_title{
+    background: grey;
+    color: #fff;
+}
+a{
+    text-decoration: none;
+    color: blue;
+}
+a:hover{
+    text-decoration: underline;
+}

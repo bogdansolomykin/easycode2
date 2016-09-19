@@ -55,13 +55,14 @@ function editAuthor($authorId, $newName, $newAge) {
 
 function getOtherAuthorsBooks($authorID, $booksID) {
 	$sql = "
-		SELECT DISTINCT
+		SELECT
 		    `b`.`id`,
 		    `b`.`title`
         FROM `author_book` AS `ab`
         LEFT JOIN `book` AS `b`
         	ON `b`.`id` = `ab`.`book_id`
-        WHERE (`ab`.`author_id` != {$authorID}) && (`ab`.`book_id` NOT IN ({$booksID}))";
+        WHERE (`ab`.`author_id` != {$authorID}) && (`ab`.`book_id` NOT IN ({$booksID}))
+        GROUP BY `b`.`id`, `b`.`title`";
 
     return fetchAll($sql);
 }

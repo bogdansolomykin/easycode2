@@ -17,6 +17,11 @@ class Human
         echo '. Мне ' . $this->age . ' года';
         echo '<br />';
     }
+
+    public function run()
+    {
+        echo 'Я бегу';
+    }
 }
 
 $john = new Human();
@@ -30,4 +35,5 @@ $mike->age = 18; // $this->age = 18;
 $john->hello();
 
 $mike->hello();
+$mike->run();
 

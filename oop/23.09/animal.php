@@ -8,7 +8,7 @@ class Animal
 
     public function drink()
     {
-        echo 'i can drink';
+        echo 'i can drink water';
     }
 
     public function getInfo()
@@ -17,5 +17,10 @@ class Animal
         $info .= 'Age: ' . $this->age . '';
 
         return $info;
+    }
+
+    public function eat(Food $food)
+    {
+
     }
 }

@@ -15,4 +15,9 @@ class Bird extends Animal
         $info .= '<br /> i\'m bird';
         return $info;
     }
+
+    public function eat(Food $food)
+    {
+        echo __CLASS__ . ': я клюю ' . $food->getName();
+    }
 }

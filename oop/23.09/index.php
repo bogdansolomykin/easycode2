@@ -1,15 +1,19 @@
 <?php
 include 'bird.php';
 include 'cat.php';
-//
-$bird = new Bird();
-$bird->name = 'kesha';
-$bird->age = 2;
-echo $bird->getInfo();
+include 'bread.php';
+include 'meat.php';
+
+$cat = new Cat();
+$catFood = new Meat();
+$catFood->name = 'мясо';
+$cat->eat($catFood);
 
 echo '<br />';
 
-$cat = new Cat();
-$cat->name = 'barsik';
-$cat->age = 5;
-echo $cat->getInfo();
+$bird = new Bird();
+$birdFood = new Bread();
+$birdFood->name = 'хлеб';
+$bird->eat($birdFood);
+
+

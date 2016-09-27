@@ -23,4 +23,9 @@ class Animal
     {
 
     }
+
+    public function getName()
+    {
+        return $this->name;
+    }
 }

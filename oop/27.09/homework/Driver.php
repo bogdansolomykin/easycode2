@@ -8,7 +8,7 @@ class Driver extends Human implements VehicleSitable
     /**
      * @var Vehicle
      */
-    public $vehicle;
+    protected $vehicle;
 
     public function drive()
     {
@@ -18,6 +18,12 @@ class Driver extends Human implements VehicleSitable
 
     public function sit(Vehicle $vehicle)
     {
+        if ($this->vehicle !== null) {
+            echo 'Я не могу сесть в ' . get_class($vehicle);
+            echo '. Потому что я уже сижу в' . get_class($this->vehicle);
+            return;
+        }
+
         $this->vehicle = $vehicle;
         echo 'Я сажусь в ' . get_class($vehicle) . ' на водительское сидение';
     }

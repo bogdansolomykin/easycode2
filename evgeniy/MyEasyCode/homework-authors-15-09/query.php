@@ -26,7 +26,7 @@ function getAuthorBooks($authorID) {
         FROM `author_book` AS `ab`
         LEFT JOIN `book` AS `b`
         	ON `b`.`id` = `ab`.`book_id`
-        WHERE `ab`.`author_id` = {$authorID};";
+        WHERE `ab`.`author_id` = {$authorID}";
 
     return fetchAll($sql);
 }

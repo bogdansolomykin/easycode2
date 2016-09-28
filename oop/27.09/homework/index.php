@@ -9,7 +9,7 @@ require_once 'Passenger.php';
 $car = new Car();
 $moto = new Moto();
 $bike = new Bike();
-$tank = new Tank();//
+//$tank = new Tank();
 
 $driver = new Driver();
 $passenger = new Passenger();
